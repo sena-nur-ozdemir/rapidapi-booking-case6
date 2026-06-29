@@ -1,0 +1,21 @@
+﻿@model RapidApiBookingCase.Dtos.DashboardDtos.ExchangeDto
+<div class="bg-luxury-card border border-luxury-border rounded-xl p-6 h-full flex flex-col">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-white font-serif text-lg flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-5 h-5 text-gold"></i> Markets</h3>
+        <span class="bg-gold/10 border border-gold/20 text-gold text-[9px] uppercase tracking-widest px-2 py-1 rounded">Live</span>
+    </div>
+    <div class="space-y-4 flex-grow flex flex-col justify-center">
+        <div class="flex justify-between items-center border-b border-luxury-border/50 pb-3">
+            <div><div class="text-white font-serif text-base tracking-wide">EUR / @(Model?.Base ?? "TRY")</div><div class="text-[10px] text-luxury-muted uppercase tracking-widest">Euro</div></div>
+            <div class="text-right"><div class="text-gold font-medium text-lg">@(Model?.rates?.EUR != null ? Model.rates.EUR.ToString("N4") : "34.5000")</div></div>
+        </div>
+        <div class="flex justify-between items-center border-b border-luxury-border/50 pb-3">
+            <div><div class="text-white font-serif text-base tracking-wide">USD / @(Model?.Base ?? "TRY")</div><div class="text-[10px] text-luxury-muted uppercase tracking-widest">US Dollar</div></div>
+            <div class="text-right"><div class="text-gold font-medium text-lg">@(Model?.rates?.USD != null ? Model.rates.USD.ToString("N4") : "32.1000")</div></div>
+        </div>
+        <div class="flex justify-between items-center">
+            <div><div class="text-white font-serif text-base tracking-wide">GBP / @(Model?.Base ?? "TRY")</div><div class="text-[10px] text-luxury-muted uppercase tracking-widest">British Pound</div></div>
+            <div class="text-right"><div class="text-gold font-medium text-lg">40.2500</div></div>
+        </div>
+    </div>
+</div>

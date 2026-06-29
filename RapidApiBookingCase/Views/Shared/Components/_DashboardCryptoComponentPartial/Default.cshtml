@@ -1,0 +1,18 @@
+﻿@model List<RapidApiBookingCase.Dtos.DashboardDtos.Token>
+<div class="bg-luxury-card border border-luxury-border rounded-xl p-6 h-full flex flex-col">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-white font-serif text-lg flex items-center gap-2"><i data-lucide="bitcoin" class="w-5 h-5 text-gold"></i> Crypto</h3>
+    </div>
+    <div class="flex-grow flex flex-col justify-center space-y-5">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model.Take(4))
+            {
+                <div class="flex justify-between items-center border-b border-luxury-border/40 pb-3 last:border-0 last:pb-0">
+                    <div class="text-white font-medium tracking-wide">@item.symbol</div>
+                    <div class="text-gold font-mono text-sm">$@item.price.ToString("N2")</div>
+                </div>
+            }
+        }
+    </div>
+</div>

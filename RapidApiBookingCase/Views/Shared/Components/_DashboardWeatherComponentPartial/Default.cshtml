@@ -1,0 +1,26 @@
+﻿@model RapidApiBookingCase.Dtos.DashboardDtos.WeatherDto
+<div class="bg-gradient-to-br from-luxury-card to-[#121215] border border-luxury-border rounded-xl p-8 h-full flex flex-col justify-between relative overflow-hidden group">
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-700"></div>
+    <div class="flex justify-between items-center relative z-10 flex-grow">
+        <div class="flex flex-col justify-center">
+            <p class="text-gold text-xs uppercase tracking-widest font-semibold mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> @(Model?.location?.name ?? "Lucerne"), @(Model?.location?.country ?? "Switzerland")</p>
+            <h2 class="text-7xl font-serif text-white font-light tracking-tighter">@(Model?.current?.temp_c ?? 18.5)<span class="text-3xl text-luxury-muted">°C</span></h2>
+            <p class="text-base text-luxury-muted mt-2 capitalize tracking-wide">@(Model?.current?.condition?.text ?? "Clear & Sunny")</p>
+        </div>
+        <div class="text-gold opacity-80 drop-shadow-[0_0_15px_rgba(197,168,128,0.3)]">
+            @if (Model?.current?.condition?.icon != null)
+            {
+                <img src="https:@Model.current.condition.icon" class="w-28 h-28 object-contain" />
+            }
+            else
+            {
+                <i data-lucide="sun" class="w-24 h-24"></i>
+            }
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 border-t border-luxury-border/50 pt-6 mt-6 relative z-10">
+        <div class="text-center border-r border-luxury-border/50"><div class="text-xs text-luxury-muted uppercase tracking-widest mb-1">Humidity</div><div class="text-white font-serif text-xl">@(Model?.current?.humidity ?? 42)%</div></div>
+        <div class="text-center border-r border-luxury-border/50"><div class="text-xs text-luxury-muted uppercase tracking-widest mb-1">Wind</div><div class="text-white font-serif text-xl">@(Model?.current?.wind_kph ?? 12) <span class="text-xs">km/h</span></div></div>
+        <div class="text-center"><div class="text-xs text-luxury-muted uppercase tracking-widest mb-1">Feels Like</div><div class="text-white font-serif text-xl">@(Model?.current?.feelslike_c ?? 19)°</div></div>
+    </div>
+</div>

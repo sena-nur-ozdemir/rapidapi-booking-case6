@@ -1,0 +1,17 @@
+# Visual Studio ve IDE dosyaları
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+
+# Derleme ve geçici dosyalar
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+EOF

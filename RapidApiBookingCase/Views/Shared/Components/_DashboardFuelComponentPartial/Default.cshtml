@@ -1,0 +1,24 @@
+﻿@model RapidApiBookingCase.Dtos.DashboardDtos.FuelDto
+<div class="bg-luxury-card border border-luxury-border rounded-xl p-6 h-full flex flex-col">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-white font-serif text-lg flex items-center gap-2"><i data-lucide="droplet" class="w-5 h-5 text-gold"></i> Energy</h3>
+    </div>
+    <div class="flex-grow flex flex-col justify-center space-y-5">
+        <div class="flex justify-between items-center border-b border-luxury-border/40 pb-3">
+            <div class="text-white font-medium tracking-wide">Diesel</div>
+            <div class="text-gold font-mono text-sm">$@(Model?.data?.diesel?.current.ToString("N2") ?? "4.12")</div>
+        </div>
+        <div class="flex justify-between items-center border-b border-luxury-border/40 pb-3">
+            <div class="text-white font-medium tracking-wide">Regular</div>
+            <div class="text-gold font-mono text-sm">$@(Model?.data?.regular?.current.ToString("N2") ?? "3.45")</div>
+        </div>
+        <div class="flex justify-between items-center border-b border-luxury-border/40 pb-3">
+            <div class="text-white font-medium tracking-wide">Midgrade</div>
+            <div class="text-gold font-mono text-sm">$@(Model?.data?.midGrade?.current.ToString("N2") ?? "3.75")</div>
+        </div>
+        <div class="flex justify-between items-center">
+            <div class="text-white font-medium tracking-wide">Premium</div>
+            <div class="text-gold font-mono text-sm">$@(Model?.data?.premium?.current.ToString("N2") ?? "3.90")</div>
+        </div>
+    </div>
+</div>

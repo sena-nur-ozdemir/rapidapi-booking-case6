@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETRA | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] }, colors: { luxury: { bg: '#0A0A0B', card: '#141416', border: '#26262A', text: '#D4D4D6', muted: '#8A8A8F' }, gold: { DEFAULT: '#C5A880', hover: '#B0946E' } } } } }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0B;
+            color: #D4D4D6;
+        }</style>
+</head>
+<body class="font-sans antialiased relative">
+
+    <div class="bg-luxury-bg/95 backdrop-blur border-b border-luxury-border sticky top-0 z-50">
+        @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 pt-12 pb-24 relative z-10">
+
+        <div class="mb-10 border-b border-luxury-border pb-6 flex justify-between items-end">
+            <div>
+                <h1 class="text-4xl font-serif text-white mb-2">VETRA <span class="italic text-gold">Dashboard</span></h1>
+                <p class="text-[10px] text-luxury-muted uppercase tracking-[0.3em]">Real-Time Global Intelligence</p>
+            </div>
+            <div class="text-[10px] text-luxury-muted uppercase tracking-widest hidden md:block">
+                @DateTime.Now.ToString("dd MMMM yyyy")
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            <div class="lg:col-span-2">@await Component.InvokeAsync("_DashboardWeatherComponentPartial")</div>
+            <div class="lg:col-span-1">@await Component.InvokeAsync("_DashboardExchangeComponentPartial")</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            @await Component.InvokeAsync("_DashboardCryptoComponentPartial")
+            @await Component.InvokeAsync("_DashboardFuelComponentPartial")
+            @await Component.InvokeAsync("_DashboardFootballComponentPartial")
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+            <div class="lg:col-span-2 h-full">
+                @await Component.InvokeAsync("_DashboardNewsComponentPartial")
+            </div>
+
+            <div class="lg:col-span-1 h-full">
+                <div class="bg-luxury-card border border-luxury-border rounded-xl p-6 h-full flex flex-col justify-center relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500')] bg-cover bg-center opacity-10 group-hover:opacity-20 transition duration-700"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-luxury-card via-luxury-card/90 to-transparent"></div>
+
+                    <div class="relative z-10 text-center">
+                        <i data-lucide="plane-takeoff" class="w-10 h-10 text-gold mx-auto mb-4"></i>
+                        <h3 class="text-white font-serif text-xl mb-2">Ready for your next journey?</h3>
+                        <p class="text-xs text-luxury-muted mb-6">Discover our exclusive collection of premium sanctuaries worldwide.</p>
+                        <a href="/Hotel/Index" class="inline-block w-full bg-gold text-luxury-bg hover:bg-gold-hover font-bold uppercase tracking-widest text-[10px] py-3.5 rounded transition">
+                            Explore Destinations
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

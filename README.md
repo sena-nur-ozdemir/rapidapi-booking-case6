@@ -1,6 +1,6 @@
-# 💎 RapidAPI Booking Integration Project
+# 💎 RapidAPI Integration Project
 
-**VETRA** — Dinamik otel arama, otel detayları ve gerçek zamanlı dashboard verilerini RapidAPI üzerinden çeken "Dark Luxury" temalı modern bir ASP.NET Core web uygulaması.
+Dinamik otel arama, otel detayları ve gerçek zamanlı dashboard verilerini RapidAPI üzerinden çeken "Dark Luxury" temalı modern bir ASP.NET Core web uygulaması.
 
 ## Proje Hakkında
 

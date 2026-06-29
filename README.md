@@ -22,7 +22,7 @@ RapidAPI platformu üzerinden çekilen tamamen dinamik verilerle çalışan, ASP
 
 * **Backend:** ASP.NET Core 8.0 MVC, C#, IHttpClientFactory, Newtonsoft.Json
 * **Mimari:** ViewComponents, Task Asynchronous Programming
-* **Veri Kaynağı:** RapidAPI (Booking API ve 5 farklı Global API)
+* **Veri Kaynağı:** RapidAPI (Booking API ve 6 farklı Global API)
 * **Yapay Zeka:** Gemini AI (UI/UX konsept tasarımı)
 * **Frontend:** Razor Views, Tailwind CSS, Lucide Icons, Custom CSS
 
